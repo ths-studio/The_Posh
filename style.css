@@ -1,7 +1,6 @@
-
 /* =========================================================
-   THE POSH — NFC GOOGLE REVIEW
-   COMPLETE RENEWED STYLE
+   THE POSH — NFC REVIEW SYSTEM
+   COMPLETE STYLE.CSS
    ========================================================= */
 
 
@@ -26,8 +25,6 @@
 
     --card: #191715;
 
-    --card-soft: rgba(255,255,255,.035);
-
     --ivory: #F8F4EC;
 
     --cream: #EDE6D8;
@@ -38,11 +35,7 @@
 
     --muted: #918A80;
 
-    --muted-dark: #66615B;
-
     --border: rgba(201,169,110,.22);
-
-    --white-border: rgba(255,255,255,.08);
 
 }
 
@@ -55,8 +48,10 @@ html,
 body {
 
     width: 100%;
-
     height: 100%;
+
+    margin: 0;
+    padding: 0;
 
     overflow: hidden;
 
@@ -84,10 +79,6 @@ body {
         "Segoe UI",
         sans-serif;
 
-    -webkit-font-smoothing: antialiased;
-
-    text-rendering: optimizeLegibility;
-
 }
 
 
@@ -103,21 +94,16 @@ body {
 
     height: 100dvh;
 
-    margin: 0 auto;
+    margin: auto;
 
     padding:
-
         max(18px, env(safe-area-inset-top))
-
         20px
-
         max(12px, env(safe-area-inset-bottom));
 
     display: flex;
 
     flex-direction: column;
-
-    position: relative;
 
 }
 
@@ -127,8 +113,6 @@ body {
    ========================================================= */
 
 .brand {
-
-    width: 100%;
 
     text-align: center;
 
@@ -142,8 +126,7 @@ body {
     display: block;
 
     font:
-
-        400 23px Georgia, serif;
+        23px Georgia, serif;
 
     letter-spacing: 5px;
 
@@ -210,17 +193,7 @@ body {
 
     font-weight: 700;
 
-    transition:
-
-        width .3s ease,
-
-        height .3s ease,
-
-        background .3s ease,
-
-        border .3s ease,
-
-        color .3s ease;
+    transition: .3s ease;
 
 }
 
@@ -238,7 +211,6 @@ body {
     color: var(--bg);
 
     box-shadow:
-
         0 0 12px rgba(201,169,110,.35);
 
 }
@@ -263,13 +235,9 @@ body {
 
     height: 1px;
 
-    display: block;
-
     background: #3A3733;
 
-    transition:
-
-        background .3s ease;
+    transition: .3s ease;
 
 }
 
@@ -334,8 +302,6 @@ body {
 
 .hero {
 
-    width: 100%;
-
     text-align: center;
 
     padding: 3vh 0 2.5vh;
@@ -348,8 +314,6 @@ body {
 .hero small,
 .heading > small,
 .result-head > small {
-
-    display: block;
 
     color: var(--gold);
 
@@ -367,9 +331,7 @@ body {
     margin-top: 10px;
 
     font:
-
-        400 clamp(35px, 9.5vw, 50px) / .96
-
+        400 clamp(35px, 9.5vw, 50px)/.96
         Georgia,
         serif;
 
@@ -405,7 +367,7 @@ em {
 
 
 /* =========================================================
-   STEP 1 — QUESTION
+   QUESTION
    ========================================================= */
 
 .question {
@@ -422,8 +384,8 @@ em {
     display: block;
 
     font:
-
-        400 17px Georgia, serif;
+        17px Georgia,
+        serif;
 
 }
 
@@ -442,7 +404,7 @@ em {
 
 
 /* =========================================================
-   STEP 1 — CATEGORY GRID
+   CATEGORY GRID
    ========================================================= */
 
 .categories {
@@ -462,15 +424,13 @@ em {
 
 .categories button {
 
-    width: 100%;
-
-    min-height: 0;
-
-    border: 1px solid var(--white-border);
+    border: 1px solid
+        rgba(255,255,255,.08);
 
     border-radius: 13px;
 
-    background: var(--card-soft);
+    background:
+        rgba(255,255,255,.035);
 
     color: var(--ivory);
 
@@ -482,30 +442,19 @@ em {
 
     display: grid;
 
-    grid-template-columns: 27px 1fr;
+    grid-template-columns:
+        27px 1fr;
 
-    grid-template-rows: auto auto;
+    grid-template-rows:
+        auto auto;
 
     column-gap: 8px;
 
     align-content: center;
 
-    transition:
+    transition: .2s ease;
 
-        transform .2s ease,
-
-        border-color .2s ease,
-
-        background .2s ease;
-
-    -webkit-tap-highlight-color: transparent;
-
-}
-
-
-.categories button:active {
-
-    transform: scale(.98);
+    font-family: inherit;
 
 }
 
@@ -537,16 +486,41 @@ em {
     background:
 
         linear-gradient(
-
             135deg,
-
             rgba(201,169,110,.14),
-
             rgba(201,169,110,.035)
-
         );
 
     transform: translateY(-1px);
+
+}
+
+
+/* =========================================================
+   CATEGORY ICON
+   ========================================================= */
+
+.category-icon {
+
+    grid-row: span 2;
+
+    width: 27px;
+
+    height: 27px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    color: var(--gold);
+
+    font-size: 12px;
 
 }
 
@@ -569,22 +543,12 @@ em {
 
     cursor: pointer;
 
-    transition:
-
-        transform .18s ease,
-
-        opacity .2s ease,
-
-        background .2s ease;
-
-    -webkit-tap-highlight-color: transparent;
+    transition: .2s ease;
 
 }
 
 
 .primary {
-
-    flex-shrink: 0;
 
     margin-top: 10px;
 
@@ -604,8 +568,6 @@ em {
 
     justify-content: center;
 
-    gap: 10px;
-
 }
 
 
@@ -618,16 +580,57 @@ em {
 }
 
 
-.primary:not(:disabled):active {
+.primary span {
+
+    margin-left: 10px;
+
+    font-size: 16px;
+
+}
+
+
+.primary:not(:disabled):active,
+.google:active,
+.copy:active {
 
     transform: scale(.98);
 
 }
 
 
-.primary span {
+/* =========================================================
+   STEP 2 — MAIN SCREEN
+   ========================================================= */
 
-    font-size: 16px;
+#step2 {
+
+    display: none;
+
+    flex-direction: column;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+
+}
+
+
+#step2::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+#step2.active {
+
+    display: flex;
 
 }
 
@@ -647,288 +650,57 @@ em {
 
 .heading > small {
 
-    margin-bottom: 7px;
+    display: block;
+
+    margin-bottom: 8px;
 
 }
 
 
 .heading h1 {
 
-    margin-top: 0;
+    margin: 0;
 
 }
 
 
 .heading p {
 
-    margin:
-
-        8px 0 0;
+    margin: 8px 0 0;
 
 }
 
 
 /* =========================================================
-   STEP 2 — RATING CONTAINER
-   =========================================================
-
-   IMPORTANT:
-
-   NO flex:1 HERE.
-
-   This means:
-   1 selected category = only 1 card's space
-   2 selected categories = 2 cards' space
-   etc.
-
-   No unnecessary empty middle area.
-   ========================================================= */
-
-#ratings {
-    flex: 1;
-    min-height: 0;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: flex-start;
-    gap: 7px;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    padding: 2px 2px 8px 0;
-
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-
-#ratings::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* =========================================================
-   RATING CARD
-   ========================================================= */
-
-.rating-card {
-
-    width: 100%;
-
-    flex: 0 0 auto;
-
-    padding: 9px 11px;
-
-    border: 1px solid var(--white-border);
-
-    border-radius: 12px;
-
-    background: var(--card-soft);
-
-}
-
-
-/* =========================================================
-   RATING TITLE
-   ========================================================= */
-
-.rating-title {
-
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    margin-bottom: 6px;
-
-}
-
-
-.rating-title b {
-
-    font:
-
-        400 11px Georgia, serif;
-
-    color: var(--ivory);
-
-    white-space: nowrap;
-
-}
-
-
-.rating-title small {
-
-    color: var(--gold);
-
-    font-size: 7px;
-
-    white-space: nowrap;
-
-}
-
-
-/* =========================================================
-   RATING OPTIONS
-   ========================================================= */
-
-.rating-options {
-
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-
-        repeat(4, minmax(0, 1fr));
-
-    gap: 5px;
-
-}
-
-
-.rating-options button {
-
-    width: 100%;
-
-    min-width: 0;
-
-    min-height: 29px;
-
-    padding: 5px 2px;
-
-    border:
-
-        1px solid
-
-        rgba(255,255,255,.08);
-
-    border-radius: 7px;
-
-    background:
-
-        rgba(0,0,0,.15);
-
-    color: var(--muted);
-
-    font:
-
-        400 8px Inter,
-
-        -apple-system,
-
-        BlinkMacSystemFont,
-
-        "Segoe UI",
-
-        sans-serif;
-
-    cursor: pointer;
-
-    transition:
-
-        transform .15s ease,
-
-        background .2s ease,
-
-        border-color .2s ease,
-
-        color .2s ease;
-
-    -webkit-tap-highlight-color: transparent;
-
-}
-
-
-.rating-options button:active {
-
-    transform: scale(.96);
-
-}
-
-
-.rating-options button.selected {
-
-    background: var(--gold2);
-
-    border-color: var(--gold2);
-
-    color: var(--bg);
-
-    font-weight: 700;
-
-}
-
-/* =========================================================
-   STEP 2 — LAYOUT
-   ========================================================= */
-
-#step2 {
-    min-height: 0;
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   STEP 2 — RATING CONTAINER
+   STEP 2 — RATINGS
    ========================================================= */
 
 #ratings {
 
-    flex: 1;
-
-    min-height: 0;
-
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
 
-    justify-content: flex-start;
-
     gap: 7px;
-
-    /*
-       Few selections = compact cards
-       Many selections = scroll
-    */
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    padding: 2px 2px 8px 0;
-
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: none;
-
-}
-
-
-/* Hide scrollbar on Chrome / Android */
-
-#ratings::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* =========================================================
-   RATING CARD
-   ========================================================= */
-
-.rating-card {
-
-    width: 100%;
 
     flex-shrink: 0;
 
+}
+
+
+/* =========================================================
+   RATING CARD
+   ========================================================= */
+
+.rating-card {
+
+    width: 100%;
+
     padding: 9px 11px;
+
+    flex-shrink: 0;
 
     border: 1px solid
         rgba(255,255,255,.08);
@@ -962,11 +734,9 @@ em {
 
 .rating-title b {
 
-    font-family: Georgia, serif;
-
-    font-size: 11px;
-
-    font-weight: 400;
+    font:
+        400 11px Georgia,
+        serif;
 
     white-space: nowrap;
 
@@ -1024,12 +794,10 @@ em {
 
     cursor: pointer;
 
-    transition:
-        background .2s ease,
-        border .2s ease,
-        transform .15s ease;
+    transition: .2s ease;
 
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color:
+        transparent;
 
 }
 
@@ -1064,11 +832,9 @@ em {
 
     width: 100%;
 
-    margin-top: 8px;
+    margin-top: 9px;
 
     min-height: 44px;
-
-    border-radius: 13px;
 
 }
 
@@ -1080,11 +846,6 @@ em {
 #step2 .back {
 
     flex-shrink: 0;
-
-}
-
-
-.back {
 
     width: 100%;
 
@@ -1102,14 +863,283 @@ em {
 
     cursor: pointer;
 
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color:
+        transparent;
 
 }
 
 
-.back:active {
+#step2 .back:active {
 
     color: var(--ivory);
+
+}
+
+
+/* =========================================================
+   STEP 3 — RESULT HEADER
+   ========================================================= */
+
+.result-head {
+
+    text-align: center;
+
+    padding: 2vh 0;
+
+    flex-shrink: 0;
+
+}
+
+
+.success {
+
+    width: 31px;
+
+    height: 31px;
+
+    margin: 0 auto 10px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--gold);
+
+    font-size: 14px;
+
+}
+
+
+.result-head p {
+
+    margin-top: 9px;
+
+}
+
+
+/* =========================================================
+   REVIEW BOX
+   ========================================================= */
+
+.review {
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding: 19px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    overflow-y: auto;
+
+}
+
+
+/* =========================================================
+   REVIEW STARS
+   ========================================================= */
+
+.stars {
+
+    color: var(--gold2);
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* =========================================================
+   GENERATED REVIEW
+   ========================================================= */
+
+#review {
+
+    color: var(--cream);
+
+    font:
+        15px/1.65 Georgia,
+        serif;
+
+}
+
+
+/* =========================================================
+   COPY BUTTON
+   ========================================================= */
+
+.copy {
+
+    margin-top: 10px;
+
+    border: 1px solid
+        rgba(255,255,255,.1);
+
+    background: transparent;
+
+    color: var(--ivory);
+
+    font-size: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.copy span {
+
+    margin-right: 8px;
+
+}
+
+
+/* =========================================================
+   GOOGLE BUTTON
+   ========================================================= */
+
+.google {
+
+    position: relative;
+
+    margin-top: 7px;
+
+    border: 0;
+
+    background: var(--ivory);
+
+    color: var(--bg);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.google b {
+
+    margin-right: 8px;
+
+    font-size: 16px;
+
+}
+
+
+.google span {
+
+    position: absolute;
+
+    right: 14px;
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+#status {
+
+    height: 15px;
+
+    margin-top: 4px;
+
+    text-align: center;
+
+    color: var(--gold2);
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   RESTART
+   ========================================================= */
+
+.restart {
+
+    border: 0;
+
+    background: transparent;
+
+    color: #66615B;
+
+    font-size: 9px;
+
+    padding: 3px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    flex-shrink: 0;
+
+    padding-top: 9px;
+
+    text-align: center;
+
+    color: #625D56;
+
+    font:
+        7px Georgia,
+        serif;
+
+    letter-spacing: 2px;
+
+}
+
+
+footer i {
+
+    color: var(--gold);
+
+    margin: 0 5px;
 
 }
 
@@ -1120,11 +1150,57 @@ em {
 
 @media (max-height: 700px) {
 
+    .hero {
+
+        padding-top: 1vh;
+
+        padding-bottom: 1vh;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .categories button {
+
+        padding: 7px 9px;
+
+    }
+
+
+    .heading {
+
+        padding-top: 0;
+
+        padding-bottom: 6px;
+
+    }
+
+
+    .heading > small {
+
+        margin-bottom: 5px;
+
+    }
+
+
+    .heading p {
+
+        margin-top: 5px;
+
+        font-size: 10px;
+
+    }
+
+
     #ratings {
 
         gap: 5px;
-
-        padding-bottom: 6px;
 
     }
 
@@ -1132,8 +1208,6 @@ em {
     .rating-card {
 
         padding: 7px 9px;
-
-        border-radius: 10px;
 
     }
 
@@ -1148,13 +1222,6 @@ em {
     .rating-title b {
 
         font-size: 10px;
-
-    }
-
-
-    .rating-title small {
-
-        font-size: 6px;
 
     }
 
@@ -1186,9 +1253,25 @@ em {
     }
 
 
-    .back {
+    #step2 .back {
 
         padding: 4px;
+
+    }
+
+
+    .primary,
+    .google,
+    .copy {
+
+        min-height: 42px;
+
+    }
+
+
+    .result-head {
+
+        padding-top: 0;
 
     }
 
@@ -1200,6 +1283,20 @@ em {
    ========================================================= */
 
 @media (max-height: 620px) {
+
+    .heading h1 {
+
+        font-size: 29px;
+
+    }
+
+
+    .heading p {
+
+        display: none;
+
+    }
+
 
     #ratings {
 
@@ -1240,7 +1337,7 @@ em {
     }
 
 
-    .back {
+    #step2 .back {
 
         padding: 3px;
 
@@ -1250,889 +1347,21 @@ em {
 
 
 /* =========================================================
-   STEP 2 — DIFFERENT CARD COUNTS
-   =========================================================
-
-   These rules slightly control spacing
-   depending on how many rating cards exist.
-
-   1–2 cards:
-   Keep everything compact.
-
-   3–5 cards:
-   Normal spacing.
-
-   6+ cards:
-   Make cards slightly tighter.
-   ========================================================= */
-
-#ratings:has(.rating-card:nth-child(1):last-child) {
-
-    gap: 0;
-
-}
-
-
-#ratings:has(.rating-card:nth-child(2):last-child) {
-
-    gap: 7px;
-
-}
-
-
-#ratings:has(.rating-card:nth-child(6)),
-#ratings:has(.rating-card:nth-child(7)),
-#ratings:has(.rating-card:nth-child(8)) {
-
-    gap: 5px;
-
-}
-
-
-#ratings:has(.rating-card:nth-child(6)) .rating-card,
-#ratings:has(.rating-card:nth-child(7)) .rating-card,
-#ratings:has(.rating-card:nth-child(8)) .rating-card {
-
-    padding-top: 7px;
-
-    padding-bottom: 7px;
-
-}
-
-
-#ratings:has(.rating-card:nth-child(6))
-.rating-title,
-
-#ratings:has(.rating-card:nth-child(7))
-.rating-title,
-
-#ratings:has(.rating-card:nth-child(8))
-.rating-title {
-
-    margin-bottom: 4px;
-
-}
-
-
-/* =========================================================
-   STEP 3 — RESULT HEADER
-   ========================================================= */
-
-.result-head {
-
-    flex-shrink: 0;
-
-    text-align: center;
-
-    padding: 2vh 0 2vh;
-
-}
-
-
-.success {
-
-    width: 31px;
-
-    height: 31px;
-
-    margin: 0 auto 10px;
-
-    border:
-
-        1px solid
-
-        var(--gold);
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: var(--gold);
-
-    font-size: 14px;
-
-}
-
-
-.result-head p {
-
-    margin-top: 9px;
-
-}
-
-
-/* =========================================================
-   REVIEW RESULT
-   ========================================================= */
-
-.review {
-
-    flex: 1;
-
-    min-height: 0;
-
-    width: 100%;
-
-    padding: 19px;
-
-    border:
-
-        1px solid
-
-        var(--border);
-
-    border-radius: 18px;
-
-    background:
-
-        linear-gradient(
-
-            145deg,
-
-            rgba(255,255,255,.055),
-
-            rgba(255,255,255,.015)
-
-        );
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    overflow: hidden;
-
-}
-
-
-.stars {
-
-    flex-shrink: 0;
-
-    color: var(--gold2);
-
-    font-size: 13px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 12px;
-
-}
-
-
-#review {
-
-    color: var(--cream);
-
-    font:
-
-        15px/1.65 Georgia, serif;
-
-    overflow: hidden;
-
-}
-
-
-/* =========================================================
-   COPY BUTTON
-   ========================================================= */
-
-.copy {
-
-    flex-shrink: 0;
-
-    margin-top: 10px;
-
-    border:
-
-        1px solid
-
-        rgba(255,255,255,.1);
-
-    background: transparent;
-
-    color: var(--ivory);
-
-    font-size: 11px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-}
-
-
-.copy:active {
-
-    transform: scale(.98);
-
-}
-
-
-/* =========================================================
-   GOOGLE BUTTON
-   ========================================================= */
-
-.google {
-
-    flex-shrink: 0;
-
-    position: relative;
-
-    margin-top: 7px;
-
-    border: 0;
-
-    background: var(--ivory);
-
-    color: var(--bg);
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-}
-
-
-.google:active {
-
-    transform: scale(.98);
-
-}
-
-
-.google b {
-
-    margin-right: 1px;
-
-    font-size: 16px;
-
-}
-
-
-.google span {
-
-    position: absolute;
-
-    right: 14px;
-
-    font-size: 16px;
-
-}
-
-
-/* =========================================================
-   STATUS
-   ========================================================= */
-
-#status {
-
-    width: 100%;
-
-    height: 15px;
-
-    flex-shrink: 0;
-
-    margin-top: 4px;
-
-    text-align: center;
-
-    color: var(--gold2);
-
-    font-size: 9px;
-
-}
-
-
-/* =========================================================
-   RESTART
-   ========================================================= */
-
-.restart {
-
-    flex-shrink: 0;
-
-    width: 100%;
-
-    border: 0;
-
-    background: transparent;
-
-    color: var(--muted-dark);
-
-    font-size: 9px;
-
-    padding: 3px;
-
-    cursor: pointer;
-
-}
-
-
-.restart:active {
-
-    color: var(--muted);
-
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-
-    flex-shrink: 0;
-
-    width: 100%;
-
-    padding-top: 9px;
-
-    text-align: center;
-
-    color: #625D56;
-
-    font:
-
-        7px Georgia, serif;
-
-    letter-spacing: 2px;
-
-}
-
-
-footer i {
-
-    color: var(--gold);
-
-    margin: 0 5px;
-
-}
-
-
-/* =========================================================
-   SMALL HEIGHT — UNDER 700PX
-   ========================================================= */
-
-@media (max-height: 700px) {
-
-    .app {
-
-        padding-top:
-
-            max(12px, env(safe-area-inset-top));
-
-        padding-left: 18px;
-
-        padding-right: 18px;
-
-    }
-
-
-    .progress {
-
-        margin-top: 11px;
-
-        margin-bottom: 6px;
-
-    }
-
-
-    .hero {
-
-        padding-top: 1vh;
-
-        padding-bottom: 1vh;
-
-    }
-
-
-    .hero h1 {
-
-        font-size: 34px;
-
-    }
-
-
-    .hero p {
-
-        margin-top: 8px;
-
-        font-size: 10px;
-
-    }
-
-
-    .question {
-
-        margin-bottom: 7px;
-
-    }
-
-
-    .categories {
-
-        gap: 5px;
-
-    }
-
-
-    .categories button {
-
-        padding: 7px 9px;
-
-        border-radius: 11px;
-
-    }
-
-
-    .categories button b {
-
-        font-size: 10px;
-
-    }
-
-
-    .categories button small {
-
-        font-size: 7px;
-
-    }
-
-
-    .heading {
-
-        padding-top: 0;
-
-        padding-bottom: 7px;
-
-    }
-
-
-    .heading h1 {
-
-        font-size: 32px;
-
-    }
-
-
-    .heading p {
-
-        margin-top: 5px;
-
-        font-size: 10px;
-
-    }
-
-
-    #ratings {
-
-        gap: 5px;
-
-    }
-
-
-    .rating-card {
-
-        padding: 7px 9px;
-
-        border-radius: 10px;
-
-    }
-
-
-    .rating-title {
-
-        margin-bottom: 4px;
-
-    }
-
-
-    .rating-title b {
-
-        font-size: 10px;
-
-    }
-
-
-    .rating-options {
-
-        gap: 4px;
-
-    }
-
-
-    .rating-options button {
-
-        min-height: 26px;
-
-        padding: 4px 1px;
-
-        font-size: 7px;
-
-    }
-
-
-    #step2 .primary {
-
-        min-height: 41px;
-
-        margin-top: 6px;
-
-    }
-
-
-    .back {
-
-        padding: 4px;
-
-    }
-
-
-    .result-head {
-
-        padding-top: 0;
-
-        padding-bottom: 1vh;
-
-    }
-
-
-    .result-head h1 {
-
-        font-size: 34px;
-
-    }
-
-
-    .review {
-
-        padding: 15px;
-
-    }
-
-
-    #review {
-
-        font-size: 13px;
-
-        line-height: 1.55;
-
-    }
-
-
-    .copy,
-    .google {
-
-        min-height: 41px;
-
-    }
-
-
-    footer {
-
-        padding-top: 5px;
-
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL HEIGHT — UNDER 620PX
-   ========================================================= */
-
-@media (max-height: 620px) {
-
-    .brand b {
-
-        font-size: 20px;
-
-    }
-
-
-    .brand small {
-
-        margin-top: 3px;
-
-        font-size: 6px;
-
-    }
-
-
-    .progress {
-
-        margin-top: 8px;
-
-        margin-bottom: 4px;
-
-    }
-
-
-    .hero h1 {
-
-        font-size: 30px;
-
-    }
-
-
-    .hero p {
-
-        display: none;
-
-    }
-
-
-    .question {
-
-        margin-bottom: 5px;
-
-    }
-
-
-    .categories {
-
-        gap: 4px;
-
-    }
-
-
-    .categories button {
-
-        padding: 5px 7px;
-
-        border-radius: 9px;
-
-    }
-
-
-    .categories button b {
-
-        font-size: 9px;
-
-    }
-
-
-    .categories button small {
-
-        font-size: 6px;
-
-    }
-
-
-    .heading {
-
-        padding-bottom: 5px;
-
-    }
-
-
-    .heading h1 {
-
-        font-size: 29px;
-
-    }
-
-
-    .heading p {
-
-        display: none;
-
-    }
-
-
-    #ratings {
-
-        gap: 4px;
-
-    }
-
-
-    .rating-card {
-
-        padding: 5px 8px;
-
-        border-radius: 9px;
-
-    }
-
-
-    .rating-title {
-
-        margin-bottom: 3px;
-
-    }
-
-
-    .rating-title b {
-
-        font-size: 9px;
-
-    }
-
-
-    .rating-title small {
-
-        font-size: 6px;
-
-    }
-
-
-    .rating-options {
-
-        gap: 3px;
-
-    }
-
-
-    .rating-options button {
-
-        min-height: 23px;
-
-        font-size: 6.5px;
-
-    }
-
-
-    #step2 .primary {
-
-        min-height: 37px;
-
-        margin-top: 4px;
-
-    }
-
-
-    .back {
-
-        padding: 3px;
-
-        font-size: 8px;
-
-    }
-
-
-    .result-head h1 {
-
-        font-size: 30px;
-
-    }
-
-
-    .success {
-
-        width: 27px;
-
-        height: 27px;
-
-        margin-bottom: 6px;
-
-    }
-
-
-    .result-head p {
-
-        display: none;
-
-    }
-
-
-    .review {
-
-        padding: 13px;
-
-        border-radius: 14px;
-
-    }
-
-
-    .stars {
-
-        margin-bottom: 8px;
-
-        font-size: 11px;
-
-    }
-
-
-    #review {
-
-        font-size: 12px;
-
-        line-height: 1.5;
-
-    }
-
-
-    .copy,
-    .google {
-
-        min-height: 38px;
-
-    }
-
-
-    #status {
-
-        height: 12px;
-
-        font-size: 8px;
-
-    }
-
-
-    footer {
-
-        display: none;
-
-    }
-
-}
-
-
-/* =========================================================
-   TOUCH DEVICES
-   ========================================================= */
-
-@media (hover: none) {
-
-    .categories button:hover {
-
-        transform: none;
-
-    }
-
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
+   TOUCH / MOBILE
    ========================================================= */
 
 button {
 
-    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 
-    user-select: none;
+    touch-action: manipulation;
 
-    -webkit-touch-callout: none;
+}
+
+
+button:focus {
+
+    outline: none;
 
 }
 
@@ -2140,10 +1369,7 @@ button {
 button:focus-visible {
 
     outline:
-
-        1px solid
-
-        var(--gold2);
+        1px solid var(--gold);
 
     outline-offset: 2px;
 
