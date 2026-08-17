@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<title>The Posh — Review</title>
+
+<meta name="theme-color" content="#11100F">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app">
+
+    <header class="brand">
+        <b>THE POSH</b>
+        <small>FASHION • STYLE • ELEGANCE</small>
+    </header>
+
+
+    <div class="progress">
+        <span class="dot active">1</span>
+        <i></i>
+        <span class="dot">2</span>
+        <i></i>
+        <span class="dot">3</span>
+    </div>
+
+
+    <!-- STEP 1 -->
+
+    <section class="screen active" id="step1">
+
+        <div class="hero">
+
+            <small>✦ YOUR EXPERIENCE MATTERS</small>
+
+            <h1>
+                How was your<br>
+                <em>experience?</em>
+            </h1>
+
+            <p>
+                We'd love to know what you enjoyed
+                about your visit to The Posh.
+            </p>
+
+        </div>
+
+
+        <div class="question">
+            <b>What would you like to review?</b>
+            <small>Select everything that applies</small>
+        </div>
+
+
+        <div class="categories">
+
+            <button data-cat="staff">
+                ♙ <b>Owner / Staff</b>
+                <small>Service & behaviour</small>
+            </button>
+
+            <button data-cat="quality">
+                ✦ <b>Quality</b>
+                <small>Fabric & finish</small>
+            </button>
+
+            <button data-cat="collection">
+                ◈ <b>Collection</b>
+                <small>Styles & trends</small>
+            </button>
+
+            <button data-cat="variety">
+                ◇ <b>Variety</b>
+                <small>Choices available</small>
+            </button>
+
+            <button data-cat="pricing">
+                ₹ <b>Pricing</b>
+                <small>Value for money</small>
+            </button>
+
+            <button data-cat="fitting">
+                ⌁ <b>Fitting</b>
+                <small>Fit & comfort</small>
+            </button>
+
+            <button data-cat="ambience">
+                ✧ <b>Store Ambience</b>
+                <small>Look & feel</small>
+            </button>
+
+            <button data-cat="overall">
+                ★ <b>Overall</b>
+                <small>Complete experience</small>
+            </button>
+
+        </div>
+
+
+        <button class="primary" id="next" disabled>
+            Continue <span>→</span>
+        </button>
+
+    </section>
+
+
+    <!-- STEP 2 -->
+
+    <section class="screen" id="step2">
+
+        <div class="heading">
+
+            <small>✦ ONE MORE THING</small>
+
+            <h1>
+                Tell us how it<br>
+                <em>felt.</em>
+            </h1>
+
+            <p>Rate each thing you selected.</p>
+
+        </div>
+
+
+        <div id="ratings"></div>
+
+
+        <button class="primary" id="generate">
+            ✨ Generate My Review <span>→</span>
+        </button>
+
+        <button class="back" id="back">
+            ← Back
+        </button>
+
+    </section>
+
+
+    <!-- STEP 3 -->
+
+    <section class="screen" id="step3">
+
+        <div class="result-head">
+
+            <div class="success">✓</div>
+
+            <small>✦ YOUR REVIEW</small>
+
+            <h1>
+                Sounds<br>
+                <em>great.</em>
+            </h1>
+
+            <p>
+                Here's a review based on your experience.
+            </p>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★ ★ ★ ★ ★
+            </div>
+
+            <p id="review"></p>
+
+        </div>
+
+
+        <button class="copy" id="copy">
+            ⧉ &nbsp; Copy Review
+        </button>
+
+
+        <button class="google" id="google">
+            <b>G</b>
+            Open Google Reviews
+            <span>↗</span>
+        </button>
+
+
+        <div id="status"></div>
+
+
+        <button class="restart" id="restart">
+            Start Again
+        </button>
+
+    </section>
+
+
+    <footer>
+        THE POSH <i>•</i> PUNJABI BAGH
+    </footer>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
