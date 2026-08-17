@@ -685,25 +685,26 @@ em {
    ========================================================= */
 
 #ratings {
-
-    width: 100%;
-
-    flex: 0 0 auto;
-
+    flex: 1;
     min-height: 0;
 
     display: flex;
-
     flex-direction: column;
 
     justify-content: flex-start;
-
-    align-items: stretch;
-
     gap: 7px;
 
-    overflow: visible;
+    overflow-y: auto;
+    overflow-x: hidden;
 
+    padding: 2px 2px 8px 0;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+#ratings::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -864,6 +865,194 @@ em {
 
 }
 
+/* =========================================================
+   STEP 2 — LAYOUT
+   ========================================================= */
+
+#step2 {
+    min-height: 0;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   STEP 2 — RATING CONTAINER
+   ========================================================= */
+
+#ratings {
+
+    flex: 1;
+
+    min-height: 0;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    gap: 7px;
+
+    /*
+       Few selections = compact cards
+       Many selections = scroll
+    */
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 2px 2px 8px 0;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+
+}
+
+
+/* Hide scrollbar on Chrome / Android */
+
+#ratings::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   RATING CARD
+   ========================================================= */
+
+.rating-card {
+
+    width: 100%;
+
+    flex-shrink: 0;
+
+    padding: 9px 11px;
+
+    border: 1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.035);
+
+}
+
+
+/* =========================================================
+   RATING TITLE
+   ========================================================= */
+
+.rating-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.rating-title b {
+
+    font-family: Georgia, serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    white-space: nowrap;
+
+}
+
+
+.rating-title small {
+
+    color: var(--gold);
+
+    font-size: 7px;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   RATING OPTIONS
+   ========================================================= */
+
+.rating-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 5px;
+
+}
+
+
+.rating-options button {
+
+    width: 100%;
+
+    min-height: 29px;
+
+    padding: 5px 2px;
+
+    border: 1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 7px;
+
+    background:
+        rgba(0,0,0,.15);
+
+    color: var(--muted);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border .2s ease,
+        transform .15s ease;
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+.rating-options button:active {
+
+    transform: scale(.97);
+
+}
+
+
+.rating-options button.selected {
+
+    background: var(--gold2);
+
+    border-color: var(--gold2);
+
+    color: var(--bg);
+
+    font-weight: 700;
+
+}
+
 
 /* =========================================================
    STEP 2 — GENERATE BUTTON
@@ -873,9 +1062,13 @@ em {
 
     flex-shrink: 0;
 
-    margin-top: 9px;
+    width: 100%;
 
-    min-height: 45px;
+    margin-top: 8px;
+
+    min-height: 44px;
+
+    border-radius: 13px;
 
 }
 
@@ -884,9 +1077,14 @@ em {
    STEP 2 — BACK BUTTON
    ========================================================= */
 
-.back {
+#step2 .back {
 
     flex-shrink: 0;
+
+}
+
+
+.back {
 
     width: 100%;
 
@@ -897,6 +1095,8 @@ em {
     color: var(--muted);
 
     padding: 6px;
+
+    font-family: inherit;
 
     font-size: 9px;
 
@@ -910,6 +1110,141 @@ em {
 .back:active {
 
     color: var(--ivory);
+
+}
+
+
+/* =========================================================
+   SMALL HEIGHT PHONES
+   ========================================================= */
+
+@media (max-height: 700px) {
+
+    #ratings {
+
+        gap: 5px;
+
+        padding-bottom: 6px;
+
+    }
+
+
+    .rating-card {
+
+        padding: 7px 9px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .rating-title {
+
+        margin-bottom: 4px;
+
+    }
+
+
+    .rating-title b {
+
+        font-size: 10px;
+
+    }
+
+
+    .rating-title small {
+
+        font-size: 6px;
+
+    }
+
+
+    .rating-options {
+
+        gap: 4px;
+
+    }
+
+
+    .rating-options button {
+
+        min-height: 27px;
+
+        padding: 4px 1px;
+
+        font-size: 7px;
+
+    }
+
+
+    #step2 .primary {
+
+        min-height: 41px;
+
+        margin-top: 6px;
+
+    }
+
+
+    .back {
+
+        padding: 4px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-height: 620px) {
+
+    #ratings {
+
+        gap: 4px;
+
+    }
+
+
+    .rating-card {
+
+        padding: 6px 8px;
+
+    }
+
+
+    .rating-title {
+
+        margin-bottom: 3px;
+
+    }
+
+
+    .rating-options button {
+
+        min-height: 25px;
+
+        font-size: 7px;
+
+    }
+
+
+    #step2 .primary {
+
+        min-height: 39px;
+
+        margin-top: 5px;
+
+    }
+
+
+    .back {
+
+        padding: 3px;
+
+    }
 
 }
 
